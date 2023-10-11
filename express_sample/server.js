@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'))
 // URLエンコード
 app.use(express.urlencoded({ extended: true }))
 
-//  ルーティングを有効
+// ルーティングを有効
 app.use(routes)
 
 //　サーバ停止: 起動中のターミナルで Ctrl + C

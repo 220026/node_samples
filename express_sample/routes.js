@@ -1,6 +1,6 @@
 // expressモジュール読み込み
 const express = require('express')
-// Routerオブジェクトを作成
+// Routerオブジェクトを生成
 const router = express.Router()
 
 // GETリクエストの処理
@@ -27,14 +27,14 @@ router.post('/auth', (req, res) => {
 
     var message = "ログイン失敗"
     // .env で設定した値で、ログインチェック
-    // TODO : データベースに接続してユーザ取得
-    // TODO : パスワードはハッシュ値でチェック
+    // TODO：データベースに接続してユーザ取得
+    // TODO：パスワードはハッシュ値でチェック
     if (loginName == process.env.LOGIN_NAME
         && password == process.env.PASSWORD) {
             message = "ログイン成功"
-            // TODO ログインが成功したらユーザの状態を保存
-            // TODO ログイン後のページの転送
-    } else{
+        //TODO ログインが成功したらユーザの状態を保存
+        //TODO ログイン後のページの転送
+    } else {
         // TODO ログイン画面に戻す
     }
     res.send(message)
