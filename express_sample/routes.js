@@ -43,7 +43,6 @@ router.get('/item', (req, res) => {
     res.render('item/index', data)
 })
 
-
 // 商品詳細
 // /item/xxx のルーティング（パスパラメーター）
 router.get('/item/:id', (req, res) => {
@@ -53,10 +52,11 @@ router.get('/item/:id', (req, res) => {
     // itemモデルを使って IDで商品データを取得
     var selectItem = item.find(id)
     var data = {
+        title: "商品詳細",
         item: selectItem,
     }
-    // views/item/detail.ejsにデータを渡して表示
-    res.render('item/detail')
+    // views/item/detail.ejs にデータを渡して表示
+    res.render('item/detail', data)
 })
 
 // POSTリクエスト
